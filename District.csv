@@ -1,0 +1,32 @@
+district_name,district_code,state_rowid,is_active
+Bagalkote,D01,1,true
+Ballari,D02,1,true
+Belagavi,D03,1,true
+Bengaluru Rural,D04,1,true
+Bengaluru Urban,D05,1,true
+Bidar,D06,1,true
+Chamarajanagar,D07,1,true
+Chikkaballapur,D08,1,true
+Chikkamagaluru,D09,1,true
+Chitradurga,D10,1,true
+Dakshina Kannada,D11,1,true
+Davanagere,D12,1,true
+Dharwad,D13,1,true
+Gadag,D14,1,true
+Hassan,D15,1,true
+Haveri,D16,1,true
+Kalaburagi,D17,1,true
+Kodagu,D18,1,true
+Kolar,D19,1,true
+Koppal,D20,1,true
+Mandya,D21,1,true
+Mysuru,D22,1,true
+Raichur,D23,1,true
+Ramanagara,D24,1,true
+Shivamogga,D25,1,true
+Tumakuru,D26,1,true
+Udupi,D27,1,true
+Uttara Kannada,D28,1,true
+Vijayapura,D29,1,true
+Yadgir,D30,1,true
+Vijayanagara,D31,1,true

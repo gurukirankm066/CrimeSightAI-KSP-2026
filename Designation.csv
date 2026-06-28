@@ -1,0 +1,13 @@
+designation_name,designation_code,sort_order,is_active
+Director General of Police,DGP,1,true
+Additional Director General,ADGP,2,true
+Inspector General,IGP,3,true
+Deputy Inspector General,DIG,4,true
+Superintendent of Police,SP,5,true
+Additional SP,ASP,6,true
+Deputy SP,DySP,7,true
+Police Inspector,PI,8,true
+Sub Inspector,SI,9,true
+Assistant Sub Inspector,ASI,10,true
+Head Constable,HC,11,true
+Police Constable,PC,12,true

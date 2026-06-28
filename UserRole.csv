@@ -1,0 +1,11 @@
+role_name,role_code,description,is_active
+Administrator,ADMIN,System Administrator,true
+SCRB Analyst,SCRB,Crime Analytics Team,true
+Superintendent,SP,District Superintendent,true
+Investigating Officer,IO,Case Investigation,true
+Station House Officer,SHO,Police Station Head,true
+Police Inspector,PI,Police Inspector,true
+Sub Inspector,SI,Sub Inspector,true
+Constable,PC,Police Constable,true
+Data Entry Operator,DEO,Data Entry,true
+Read Only User,READONLY,Read Only Access,true
