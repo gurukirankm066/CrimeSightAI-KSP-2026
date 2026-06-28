@@ -1,0 +1,202 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+@import "leaflet/dist/leaflet.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-panel: var(--panel);
+  --color-panel-foreground: var(--foreground);
+  --color-elevated: var(--elevated);
+  --color-card: var(--panel);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--elevated);
+  --color-popover-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--elevated);
+  --color-secondary-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--panel);
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+:root {
+  --background: #0b0d10;
+  --foreground: #e6eaf0;
+  --panel: #11141a;
+  --elevated: #161a21;
+  --muted: #161a21;
+  --muted-foreground: #8a93a3;
+  --primary: #2dd4de;
+  --primary-foreground: #04181a;
+  --accent: #16323a;
+  --accent-foreground: #2dd4de;
+  --destructive: #e5484d;
+  --destructive-foreground: #fff5f5;
+  --warning: #f5a623;
+  --warning-foreground: #1a1206;
+  --success: #3dd68c;
+  --border: #232833;
+  --border-strong: #2f3744;
+  --input: #232833;
+  --ring: #2dd4de;
+  --radius: 4px;
+}
+
+.dark {
+  --background: #0b0d10;
+  --foreground: #e6eaf0;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--primary) 35%, transparent);
+  }
+
+  /* Scrollbars */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: 6px;
+    border: 2px solid var(--background);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a4452;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .live-pulse {
+    animation: live-pulse 1.8s ease-in-out infinite;
+  }
+
+  @keyframes live-pulse {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 color-mix(in oklab, var(--success) 60%, transparent);
+    }
+    50% {
+      opacity: 0.7;
+      box-shadow: 0 0 0 4px color-mix(in oklab, var(--success) 0%, transparent);
+    }
+  }
+
+  .scan-fade {
+    animation: scan-fade 0.18s ease-out;
+  }
+  @keyframes scan-fade {
+    from {
+      opacity: 0;
+      transform: translateY(2px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Leaflet dark adjustments */
+.leaflet-container {
+  background: #0b0d10;
+  font-family: var(--font-sans);
+}
+.leaflet-bar,
+.leaflet-control-zoom a {
+  background: #161a21 !important;
+  color: #e6eaf0 !important;
+  border-color: #232833 !important;
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #161a21;
+  color: #e6eaf0;
+  border-radius: 4px;
+}
+.leaflet-tooltip {
+  background: #161a21;
+  color: #e6eaf0;
+  border: 1px solid #2f3744;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+.leaflet-tooltip-top:before {
+  border-top-color: #2f3744;
+}
+
+/* Enterprise micro-interactions */
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.22s ease-out;
+}
+
+/* Respect reduced-motion preferences globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
